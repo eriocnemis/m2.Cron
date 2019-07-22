@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Eriocnemis, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Eriocnemis\Cron\Block\Adminhtml\Job" name="cron.job.grid.container">
+                <block class="Magento\Backend\Block\Widget\Grid" name="cron.job.grid" as="grid">
+                    <arguments>
+                        <argument name="id" xsi:type="string">jobGrid</argument>
+                        <argument name="dataSource" xsi:type="object">Eriocnemis\Cron\Model\ResourceModel\Job\Collection</argument>
+                        <argument name="default_sort" xsi:type="string">name</argument>
+                        <argument name="default_dir" xsi:type="string">ASC</argument>
+                    </arguments>
+                    <block class="Eriocnemis\Cron\Block\Adminhtml\Widget\Grid\Massaction" name="cron.job.grid.massaction" as="grid.massaction">
+                        <arguments>
+                            <argument name="massaction_id_field" xsi:type="string">name</argument>
+                            <argument name="form_field_name" xsi:type="string">job_ids</argument>
+                            <argument name="use_select_all" xsi:type="string">1</argument>
+                            <argument name="options" xsi:type="array">
+                                <item name="status" xsi:type="array">
+                                    <item name="label" xsi:type="string" translate="true">Change Status</item>
+                                    <item name="url" xsi:type="string">*/*/changeStatus</item>
+                                    <item name="block_name" xsi:type="string">status</item>
+                                </item>
+                            </argument>
+                        </arguments>
+                        <block class="Magento\Backend\Block\Widget\Grid\Massaction\Additional" name="cron.job.grid.massactions.status" as="status">
+                            <arguments>
+                                <argument name="fields" xsi:type="array">
+                                    <item name="visibility" xsi:type="array">
+                                        <item name="name" xsi:type="string">status</item>
+                                        <item name="type" xsi:type="string">select</item>
+                                        <item name="class" xsi:type="string">required-entry</item>
+                                        <item name="label" xsi:type="string" translate="true">Status</item>
+                                        <item name="values" xsi:type="string">Eriocnemis\Cron\Model\Config\Source\ActiveInactive</item>
+                                    </item>
+                                </argument>
+                            </arguments>
+                        </block>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Export" name="cron.job.grid.export" as="grid.export">
+                        <arguments>
+                            <argument name="exportTypes" xsi:type="array">
+                                <item name="csv" xsi:type="array">
+                                    <item name="urlPath" xsi:type="string">*/*/exportCsv</item>
+                                    <item name="label" xsi:type="string" translate="true">CSV</item>
+                                </item>
+                                <item name="excel" xsi:type="array">
+                                    <item name="urlPath" xsi:type="string">*/*/exportXml</item>
+                                    <item name="label" xsi:type="string" translate="true">Excel XML</item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="cron.job.grid.columnSet" as="grid.columnSet">
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" name="name">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Job Name</argument>
+                                <argument name="index" xsi:type="string">name</argument>
+                                <argument name="column_css_class" xsi:type="string">col-id</argument>
+                                <argument name="header_css_class" xsi:type="string">col-id</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" name="group">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Group</argument>
+                                <argument name="type" xsi:type="string">options</argument>
+                                <argument name="options" xsi:type="options" model="Eriocnemis\Cron\Model\Config\Source\Group"/>
+                                <argument name="index" xsi:type="string">group</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" name="schedule">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Cron Expression</argument>
+                                <argument name="index" xsi:type="string">schedule</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" name="module">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Module</argument>
+                                <argument name="index" xsi:type="string">module</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" name="instance">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Instance</argument>
+                                <argument name="index" xsi:type="string">instance</argument>
+                            </arguments>
+                        </block>
+                        <block class="Magento\Backend\Block\Widget\Grid\Column" name="status">
+                            <arguments>
+                                <argument name="header" xsi:type="string" translate="true">Status</argument>
+                                <argument name="type" xsi:type="string">options</argument>
+                                <argument name="options" xsi:type="options" model="Eriocnemis\Cron\Model\Config\Source\ActiveInactive"/>
+                                <argument name="index" xsi:type="string">status</argument>
+                            </arguments>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

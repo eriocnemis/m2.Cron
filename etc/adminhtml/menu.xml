@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Eriocnemis, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Eriocnemis_Cron::cron" title="Cron" translate="title" module="Magento_Backend" sortOrder="55" parent="Magento_Backend::system" resource="Magento_Backend::cron"/>
+        <add id="Eriocnemis_Cron::cron_job" title="Jobs" translate="title" module="Eriocnemis_Cron" sortOrder="10" parent="Eriocnemis_Cron::cron" action="eriocnemis_cron/job" resource="Magento_Backend::cron_job"/>
+        <add id="Eriocnemis_Cron::cron_schedule" title="Schedules" translate="title" module="Eriocnemis_Cron" sortOrder="20" parent="Eriocnemis_Cron::cron" action="eriocnemis_cron/schedule" resource="Magento_Backend::cron_schedule"/>
+    </menu>
+</config>
