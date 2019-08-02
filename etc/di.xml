@@ -19,4 +19,35 @@
             </argument>
         </arguments>
     </type>
+    <!-- ui grid -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="eriocnemis_cron_job_listing_data_source" xsi:type="string">Eriocnemis\Cron\Model\ResourceModel\Job\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Eriocnemis\Cron\Model\ResourceModel\Job\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">eriocnemis_cron_job</argument>
+            <argument name="eventPrefix" xsi:type="string">eriocnemis_cron_job_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">collection</argument>
+            <argument name="resourceModel" xsi:type="string">Eriocnemis\Cron\Model\ResourceModel\Job</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="eriocnemis_cron_schedule_listing_data_source" xsi:type="string">Eriocnemis\Cron\Model\ResourceModel\Schedule\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Eriocnemis\Cron\Model\ResourceModel\Schedule\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cron_schedule</argument>
+            <argument name="eventPrefix" xsi:type="string">eriocnemis_cron_schedule_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">collection</argument>
+            <argument name="resourceModel" xsi:type="string">Eriocnemis\Cron\Model\ResourceModel\Schedule</argument>
+        </arguments>
+    </virtualType>
 </config>

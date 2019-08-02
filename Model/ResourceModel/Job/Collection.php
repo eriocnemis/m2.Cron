@@ -15,6 +15,13 @@ use \Eriocnemis\Cron\Model\Job;
 class Collection extends AbstractCollection
 {
     /**
+     * Identifier field name for collection items
+     *
+     * @var string
+     */
+    protected $_idFieldName = 'name';
+
+    /**
      * Name prefix of events that are dispatched by model
      *
      * @var string

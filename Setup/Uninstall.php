@@ -23,8 +23,11 @@ class Uninstall implements UninstallInterface
      */
     public function uninstall(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
+        $version = $context->getVersion();
         $setup->startSetup();
+
         $this->removeTables($setup);
+
         $setup->endSetup();
     }
 
@@ -34,7 +37,7 @@ class Uninstall implements UninstallInterface
      * @param SchemaSetupInterface $setup
      * @return void
      */
-    private function removeTables(SchemaSetupInterface $setup)
+    protected function removeTables(SchemaSetupInterface $setup)
     {
         $tableNames = [
             'eriocnemis_cron_job'
