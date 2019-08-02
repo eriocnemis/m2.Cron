@@ -21,24 +21,23 @@ class MassDelete extends Action
      */
     public function execute()
     {
-        $ids = (array)$this->getRequest()->getParam('schedule_ids');
-        if (!count($ids)) {
-            $this->messageManager->addError(
-                __('Please correct the schedules you requested.')
-            );
-            return $this->_redirect('*/*/*');
-        }
-
         try {
-            $collection = $this->collectionFactory->create();
-            $collection->addFieldToFilter('schedule_id', ['in' => $ids]);
-            /** @var \Eriocnemis\Cron\Model\Schedule $schedule */
-            foreach ($collection as $schedule) {
-                $schedule->delete();
+            $collection = $this->filter->getCollection(
+                $this->collectionFactory->create()
+            );
+
+            $size = $collection->getSize();
+            if (!$size) {
+                $this->messageManager->addError(
+                    __('Please correct the schedules you requested.')
+                );
+                return $this->_redirect('*/*/*');
             }
 
+            $collection->walk('delete');
+
             $this->messageManager->addSuccess(
-                __('You deleted a total of %1 records.', count($ids))
+                __('You deleted a total of %1 records.', $size)
             );
         } catch (LocalizedException $e) {
             $this->messageManager->addError($e->getMessage());

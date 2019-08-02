@@ -8,6 +8,7 @@ namespace Eriocnemis\Cron\Controller\Adminhtml;
 use \Magento\Framework\App\Response\Http\FileFactory;
 use \Magento\Backend\App\Action;
 use \Magento\Backend\App\Action\Context;
+use \Magento\Ui\Component\MassAction\Filter;
 use \Psr\Log\LoggerInterface;
 use \Eriocnemis\Cron\Model\ResourceModel\Schedule\CollectionFactory as ScheduleCollectionFactory;
 
@@ -45,22 +46,32 @@ abstract class Schedule extends Action
     protected $fileFactory;
 
     /**
+     * Mass action filter
+     *
+     * @var Filter
+     */
+    protected $filter;
+
+    /**
      * Initialize controller
      *
      * @param Context $context
      * @param LoggerInterface $logger
      * @param ScheduleCollectionFactory $collectionFactory
      * @param FileFactory $fileFactory
+     * @param Filter $filter
      */
     public function __construct(
         Context $context,
         LoggerInterface $logger,
         ScheduleCollectionFactory $collectionFactory,
-        FileFactory $fileFactory
+        FileFactory $fileFactory,
+        Filter $filter
     ) {
         $this->logger = $logger;
         $this->collectionFactory = $collectionFactory;
         $this->fileFactory = $fileFactory;
+        $this->filter = $filter;
 
         parent::__construct(
             $context

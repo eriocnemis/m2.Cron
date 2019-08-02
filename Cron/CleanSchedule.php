@@ -93,10 +93,7 @@ class CleanSchedule
         $collection = $this->collectionFactory->create();
         $collection->addExpireDateFilter($this->helper->getDays());
         $collection->addFieldToFilter('status', ['in' => $statuses]);
-        /** @var \Eriocnemis\Cron\Model\Schedule $schedule */
-        foreach ($collection as $schedule) {
-            $schedule->delete();
-        }
+        $collection->walk('delete');
     }
 
     /**

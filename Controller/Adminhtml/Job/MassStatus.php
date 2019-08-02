@@ -12,7 +12,7 @@ use \Eriocnemis\Cron\Controller\Adminhtml\Job as Action;
 /**
  * Job change status controller
  */
-class ChangeStatus extends Action
+class MassStatus extends Action
 {
     /**
      * Change job status action
@@ -21,25 +21,25 @@ class ChangeStatus extends Action
      */
     public function execute()
     {
-        $ids = (array)$this->getRequest()->getParam('job_ids');
-        if (!count($ids)) {
-            $this->messageManager->addError(
-                __('Please correct the jobs you requested.')
-            );
-            return $this->_redirect('*/*/*');
-        }
-
         try {
-            $status = (int)$this->getRequest()->getParam('status');
-            $collection = $this->collectionFactory->create();
-            $collection->addFieldToFilter('name', ['in' => $ids]);
-            /** @var \Eriocnemis\Cron\Model\Job $job */
-            foreach ($collection as $job) {
-                $job->setStatus($status)->save();
+            $collection = $this->filter->getCollection(
+                $this->collectionFactory->create()
+            );
+
+            $size = $collection->getSize();
+            if (!$size) {
+                $this->messageManager->addError(
+                    __('Please correct the jobs you requested.')
+                );
+                return $this->_redirect('*/*/*');
             }
 
+            $status = (int)$this->getRequest()->getParam('status');
+            $collection->setDataToAll('status', $status);
+            $collection->walk('save');
+
             $this->messageManager->addSuccess(
-                __('You updated a total of %1 records.', count($ids))
+                __('You updated a total of %1 records.', $size)
             );
         } catch (LocalizedException $e) {
             $this->messageManager->addError($e->getMessage());

@@ -24,15 +24,15 @@ class InstallSchema implements InstallSchemaInterface
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
-        $installer = $setup;
-        $installer->startSetup();
+        $version = $context->getVersion();
+        $setup->startSetup();
 
         /**
          * Create table 'eriocnemis_cron_job'
          */
-        $jobTable = $installer->getTable('eriocnemis_cron_job');
-        if (!$installer->tableExists($jobTable)) {
-            $table = $installer->getConnection()->newTable(
+        $jobTable = $setup->getTable('eriocnemis_cron_job');
+        if (!$setup->tableExists($jobTable)) {
+            $table = $setup->getConnection()->newTable(
                 $jobTable
             )->addColumn(
                 'name',
@@ -84,26 +84,26 @@ class InstallSchema implements InstallSchemaInterface
                 'Status'
             )
             ->addIndex(
-                $installer->getIdxName($jobTable, ['name']),
+                $setup->getIdxName($jobTable, ['name']),
                 ['name']
             )
             ->addIndex(
-                $installer->getIdxName($jobTable, ['group']),
+                $setup->getIdxName($jobTable, ['group']),
                 ['group']
             )
             ->addIndex(
-                $installer->getIdxName($jobTable, ['module']),
+                $setup->getIdxName($jobTable, ['module']),
                 ['module']
             )
             ->addIndex(
-                $installer->getIdxName($jobTable, ['status']),
+                $setup->getIdxName($jobTable, ['status']),
                 ['status']
             )
             ->setComment(
                 'Cron Job Table'
             );
-            $installer->getConnection()->createTable($table);
+            $setup->getConnection()->createTable($table);
         }
-        $installer->endSetup();
+        $setup->endSetup();
     }
 }

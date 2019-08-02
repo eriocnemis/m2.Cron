@@ -65,6 +65,9 @@ class Recurring implements InstallSchemaInterface
      */
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
+        $version = $context->getVersion();
+        $setup->startSetup();
+
         foreach ($this->configData->getJobs() as $group => $jobs) {
             foreach ($jobs as $data) {
                 $data['group'] = $group;
@@ -75,6 +78,7 @@ class Recurring implements InstallSchemaInterface
                 $job->save();
             }
         }
+        $setup->endSetup();
     }
 
     /**
