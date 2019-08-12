@@ -15,7 +15,7 @@ use \Eriocnemis\Cron\Controller\Adminhtml\Schedule as Action;
 class MassDelete extends Action
 {
     /**
-     * Delete specified regions
+     * Delete specified schedules
      *
      * @return ResponseInterface
      */

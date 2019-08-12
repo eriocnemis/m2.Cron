@@ -15,7 +15,7 @@ use \Eriocnemis\Cron\Controller\Adminhtml\Job as Action;
 class MassStatus extends Action
 {
     /**
-     * Change job status action
+     * Change statuses of specific jobs
      *
      * @return ResponseInterface
      */
