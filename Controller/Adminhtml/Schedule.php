@@ -5,12 +5,12 @@
  */
 namespace Eriocnemis\Cron\Controller\Adminhtml;
 
-use \Magento\Framework\App\Response\Http\FileFactory;
-use \Magento\Backend\App\Action;
-use \Magento\Backend\App\Action\Context;
-use \Magento\Ui\Component\MassAction\Filter;
-use \Psr\Log\LoggerInterface;
-use \Eriocnemis\Cron\Model\ResourceModel\Schedule\CollectionFactory as ScheduleCollectionFactory;
+use Magento\Framework\App\Response\Http\FileFactory;
+use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
+use Magento\Ui\Component\MassAction\Filter;
+use Psr\Log\LoggerInterface;
+use Eriocnemis\Cron\Model\ResourceModel\Schedule\CollectionFactory as ScheduleCollectionFactory;
 
 /**
  * Schedule abstract controller

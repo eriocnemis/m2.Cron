@@ -5,7 +5,7 @@
  */
 namespace Eriocnemis\Cron\Model\ResourceModel;
 
-use \Magento\Framework\Model\ResourceModel\Db\AbstractDb;
+use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
  * Job resource

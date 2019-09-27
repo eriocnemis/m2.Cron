@@ -5,7 +5,7 @@
  */
 namespace Eriocnemis\Cron\Block\Adminhtml\Widget\Grid;
 
-use \Magento\Backend\Block\Widget\Grid\Massaction as AbstractMassaction;
+use Magento\Backend\Block\Widget\Grid\Massaction as AbstractMassaction;
 
 /**
  * Widget massaction

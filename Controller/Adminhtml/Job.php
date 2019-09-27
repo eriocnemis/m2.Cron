@@ -5,12 +5,12 @@
  */
 namespace Eriocnemis\Cron\Controller\Adminhtml;
 
-use \Magento\Framework\App\Response\Http\FileFactory;
-use \Magento\Backend\App\Action;
-use \Magento\Backend\App\Action\Context;
-use \Magento\Ui\Component\MassAction\Filter;
-use \Psr\Log\LoggerInterface;
-use \Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
+use Magento\Framework\App\Response\Http\FileFactory;
+use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
+use Magento\Ui\Component\MassAction\Filter;
+use Psr\Log\LoggerInterface;
+use Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
 
 /**
  * Job abstract controller

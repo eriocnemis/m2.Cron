@@ -5,13 +5,13 @@
  */
 namespace Eriocnemis\Cron\Setup;
 
-use \Magento\Framework\App\Utility\Classes;
-use \Magento\Framework\ObjectManager\ConfigInterface;
-use \Magento\Framework\Setup\InstallSchemaInterface;
-use \Magento\Framework\Setup\ModuleContextInterface;
-use \Magento\Framework\Setup\SchemaSetupInterface;
-use \Magento\Cron\Model\Config\Data as ConfigData;
-use \Eriocnemis\Cron\Model\JobFactory;
+use Magento\Framework\App\Utility\Classes;
+use Magento\Framework\ObjectManager\ConfigInterface;
+use Magento\Framework\Setup\InstallSchemaInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Cron\Model\Config\Data as ConfigData;
+use Eriocnemis\Cron\Model\JobFactory;
 
 /**
  * Recurring schema

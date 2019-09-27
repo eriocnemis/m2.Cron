@@ -5,8 +5,8 @@
  */
 namespace Eriocnemis\Cron\Model;
 
-use \Magento\Framework\Model\AbstractModel;
-use \Eriocnemis\Cron\Model\ResourceModel\Job as JobResource;
+use Magento\Framework\Model\AbstractModel;
+use Eriocnemis\Cron\Model\ResourceModel\Job as JobResource;
 
 /**
  * Job model

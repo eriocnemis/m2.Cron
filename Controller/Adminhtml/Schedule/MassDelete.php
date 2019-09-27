@@ -5,9 +5,9 @@
  */
 namespace Eriocnemis\Cron\Controller\Adminhtml\Schedule;
 
-use \Magento\Framework\App\ResponseInterface;
-use \Magento\Framework\Exception\LocalizedException;
-use \Eriocnemis\Cron\Controller\Adminhtml\Schedule as Action;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Exception\LocalizedException;
+use Eriocnemis\Cron\Controller\Adminhtml\Schedule as Action;
 
 /**
  * Schedule mass delete controller

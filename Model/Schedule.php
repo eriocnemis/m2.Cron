@@ -5,8 +5,8 @@
  */
 namespace Eriocnemis\Cron\Model;
 
-use \Magento\Framework\Model\AbstractModel;
-use \Eriocnemis\Cron\Model\ResourceModel\Schedule as ScheduleResource;
+use Magento\Framework\Model\AbstractModel;
+use Eriocnemis\Cron\Model\ResourceModel\Schedule as ScheduleResource;
 
 /**
  * Schedule model

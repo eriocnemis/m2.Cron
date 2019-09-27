@@ -5,8 +5,8 @@
  */
 namespace Eriocnemis\Cron\Controller\Adminhtml\Job;
 
-use \Magento\Framework\App\ResponseInterface;
-use \Eriocnemis\Cron\Controller\Adminhtml\Job as Action;
+use Magento\Framework\App\ResponseInterface;
+use Eriocnemis\Cron\Controller\Adminhtml\Job as Action;
 
 /**
  * Job index controller

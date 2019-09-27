@@ -5,7 +5,7 @@
  */
 namespace Eriocnemis\Cron\Model\Config\Source;
 
-use \Magento\Framework\Option\ArrayInterface;
+use Magento\Framework\Option\ArrayInterface;
 
 /**
  * ActiveInactive source

@@ -5,8 +5,8 @@
  */
 namespace Eriocnemis\Cron\Controller\Adminhtml\Schedule;
 
-use \Magento\Framework\App\ResponseInterface;
-use \Eriocnemis\Cron\Controller\Adminhtml\Schedule as Action;
+use Magento\Framework\App\ResponseInterface;
+use Eriocnemis\Cron\Controller\Adminhtml\Schedule as Action;
 
 /**
  * Schedule index controller

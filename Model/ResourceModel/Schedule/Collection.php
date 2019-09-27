@@ -5,9 +5,9 @@
  */
 namespace Eriocnemis\Cron\Model\ResourceModel\Schedule;
 
-use \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-use \Eriocnemis\Cron\Model\ResourceModel\Schedule as ScheduleResource;
-use \Eriocnemis\Cron\Model\Schedule;
+use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+use Eriocnemis\Cron\Model\ResourceModel\Schedule as ScheduleResource;
+use Eriocnemis\Cron\Model\Schedule;
 
 /**
  * Schedule collection

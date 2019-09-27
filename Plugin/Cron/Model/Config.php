@@ -5,8 +5,8 @@
  */
 namespace Eriocnemis\Cron\Plugin\Cron\Model;
 
-use \Magento\Cron\Model\Config as Subject;
-use \Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
+use Magento\Cron\Model\Config as Subject;
+use Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
 
 /**
  * Config plugin

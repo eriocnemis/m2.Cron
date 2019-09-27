@@ -5,8 +5,8 @@
  */
 namespace Eriocnemis\Cron\Model\Config\Source;
 
-use \Magento\Framework\Option\ArrayInterface;
-use \Magento\Cron\Model\ConfigInterface;
+use Magento\Framework\Option\ArrayInterface;
+use Magento\Cron\Model\ConfigInterface;
 
 /**
  * Group source

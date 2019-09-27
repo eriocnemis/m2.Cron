@@ -5,10 +5,10 @@
  */
 namespace Eriocnemis\Cron\Console\Command;
 
-use \Symfony\Component\Console\Command\Command;
-use \Symfony\Component\Console\Input\InputInterface;
-use \Symfony\Component\Console\Output\OutputInterface;
-use \Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
 
 /**
  * Command cron job info
