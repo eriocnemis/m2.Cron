@@ -11,7 +11,7 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\DB\Ddl\Table;
 
 /**
- * Install schema
+ * DB install schema
  */
 class InstallSchema implements InstallSchemaInterface
 {
