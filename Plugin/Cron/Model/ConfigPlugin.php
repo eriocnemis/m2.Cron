@@ -9,9 +9,9 @@ use Magento\Cron\Model\Config as Subject;
 use Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
 
 /**
- * Config plugin
+ * Cron config plugin
  */
-class Config
+class ConfigPlugin
 {
     /**
      * Job collection factory
