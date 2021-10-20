@@ -5,7 +5,8 @@
  */
 namespace Eriocnemis\Cron\Controller\Adminhtml\Job;
 
-use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\ResultInterface;
 use Eriocnemis\Cron\Controller\Adminhtml\Job as Action;
 
 /**
@@ -16,17 +17,17 @@ class Index extends Action
     /**
      * Jobs list
      *
-     * @return ResponseInterface
+     * @return ResultInterface
      */
     public function execute()
     {
-        $this->_view->loadLayout();
-        $this->_setActiveMenu(
-            'Eriocnemis_Cron::cron_job'
-        );
-        $this->_view->getPage()->getConfig()->getTitle()->prepend(
-            __('Jobs')
-        );
-        $this->_view->renderLayout();
+        /** @var \Magento\Backend\Model\View\Result\Page $result */
+        $result = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        $result->setActiveMenu('Eriocnemis_Cron::cron_job');
+
+        $title = $result->getConfig()->getTitle();
+        $title->prepend((string)__('Jobs'));
+
+        return $result;
     }
 }

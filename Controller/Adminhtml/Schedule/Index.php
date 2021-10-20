@@ -5,7 +5,8 @@
  */
 namespace Eriocnemis\Cron\Controller\Adminhtml\Schedule;
 
-use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\ResultInterface;
 use Eriocnemis\Cron\Controller\Adminhtml\Schedule as Action;
 
 /**
@@ -16,17 +17,17 @@ class Index extends Action
     /**
      * Schedules list
      *
-     * @return ResponseInterface
+     * @return ResultInterface
      */
     public function execute()
     {
-        $this->_view->loadLayout();
-        $this->_setActiveMenu(
-            'Eriocnemis_Cron::cron_schedule'
-        );
-        $this->_view->getPage()->getConfig()->getTitle()->prepend(
-            __('Schedules')
-        );
-        $this->_view->renderLayout();
+        /** @var \Magento\Backend\Model\View\Result\Page $result */
+        $result = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        $result->setActiveMenu('Eriocnemis_Cron::cron_schedule');
+
+        $title = $result->getConfig()->getTitle();
+        $title->prepend((string)__('Schedules'));
+
+        return $result;
     }
 }
