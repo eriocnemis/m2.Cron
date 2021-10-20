@@ -16,7 +16,7 @@ class Status implements ArrayInterface
     /**
      * Retrieve config options
      *
-     * @return array
+     * @return mixed[]
      */
     public function toOptionArray()
     {

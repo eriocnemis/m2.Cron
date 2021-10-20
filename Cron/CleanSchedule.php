@@ -85,7 +85,7 @@ class CleanSchedule
     /**
      * Delete expire schedule
      *
-     * @param array $statuses
+     * @param string[] $statuses
      * @return void
      */
     protected function deleteExpire(array $statuses)

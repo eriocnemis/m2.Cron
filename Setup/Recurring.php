@@ -5,7 +5,6 @@
  */
 namespace Eriocnemis\Cron\Setup;
 
-use Magento\Framework\App\Utility\Classes;
 use Magento\Framework\ObjectManager\ConfigInterface;
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -19,25 +18,19 @@ use Eriocnemis\Cron\Model\JobFactory;
 class Recurring implements InstallSchemaInterface
 {
     /**
-     * Job factory
-     *
      * @var JobFactory
      */
-    protected $jobFactory;
+    private $jobFactory;
 
     /**
-     * Cron config data
-     *
      * @var ConfigData
      */
-    protected $configData;
+    private $configData;
 
     /**
-     * Object manager config
-     *
      * @var ConfigInterface
      */
-    protected $configObject;
+    private $configObject;
 
     /**
      * Initialize schema
@@ -84,18 +77,30 @@ class Recurring implements InstallSchemaInterface
     /**
      * Retrieve module name
      *
-     * @param array $data
+     * @param mixed[] $data
      * @return string|null
      */
-    protected function getModuleName($data)
+    private function getModuleName($data)
     {
         $instance = $data['instance'] ?? null;
         if ($instance) {
             $instance = $this->configObject->getInstanceType($instance);
             if (false !== strpos($instance, '\\')) {
-                return Classes::getClassModuleName($instance);
+                return $this->getClassModuleName($instance);
             }
         }
         return null;
+    }
+
+    /**
+     * Retrieve module name by class
+     *
+     * @param string $class
+     * @return string
+     */
+    private function getClassModuleName($class)
+    {
+        $parts = explode('\\', trim($class, '\\'));
+        return $parts[0] . '_' . $parts[1];
     }
 }

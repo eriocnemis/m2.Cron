@@ -35,8 +35,8 @@ class ConfigPlugin
      * Retrieve cron full cron jobs
      *
      * @param Subject $subject
-     * @param array $result
-     * @return array
+     * @param mixed[] $result
+     * @return mixed[]
      */
     public function afterGetJobs(Subject $subject, $result)
     {
@@ -50,9 +50,9 @@ class ConfigPlugin
     /**
      * Retrieve prepared result
      *
-     * @param array $result
-     * @param array $jobIds
-     * @return array
+     * @param mixed[] $result
+     * @param int[] $jobIds
+     * @return mixed[]
      */
     protected function prepareResult(array $result, array $jobIds)
     {
@@ -69,7 +69,7 @@ class ConfigPlugin
     /**
      * Retrieve disable job ids
      *
-     * @return array
+     * @return int[]
      */
     protected function getInactiveIds()
     {

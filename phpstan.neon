@@ -1,0 +1,7 @@
+parameters:
+    checkExplicitMixedMissingReturn: true
+    checkPhpDocMissingReturn: true
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        - '#Parameter \#1 \$callback of method Magento\\Framework\\Data\\Collection::walk\(\) expects callable\(\).#'
+        - '#return type has no value type specified in iterable type \$this\(Eriocnemis\\Cron\\Model\\ResourceModel\\Schedule\\Collection\).#'

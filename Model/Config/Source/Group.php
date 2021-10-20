@@ -16,7 +16,7 @@ class Group implements ArrayInterface
     /**
      * Config options
      *
-     * @var array
+     * @var mixed[]
      */
     protected $options;
 
@@ -41,7 +41,7 @@ class Group implements ArrayInterface
     /**
      * Retrieve config options
      *
-     * @return array
+     * @return mixed[]
      */
     public function toOptionArray()
     {

@@ -5,6 +5,7 @@
  */
 namespace Eriocnemis\Cron\Console\Command;
 
+use Magento\Framework\Console\Cli;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -49,7 +50,7 @@ class CronJobInfoCommand extends Command
     /**
      * Executes the current command
      *
-     * @return null
+     * @return int
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -60,6 +61,6 @@ class CronJobInfoCommand extends Command
                 sprintf('%-60s %s', $job->getId(), $job->getStatus() ? 'enabled' : 'disabled')
             );
         }
-        return null;
+        return Cli::RETURN_SUCCESS;
     }
 }
