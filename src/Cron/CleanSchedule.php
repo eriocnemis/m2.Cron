@@ -21,29 +21,21 @@ class CleanSchedule
     const XML_LAST_CLEAN = 'system/cron_clean/last_clean';
 
     /**
-     * Schedule collection factory
-     *
      * @var ScheduleCollectionFactory
      */
     protected $collectionFactory;
 
     /**
-     * Config writer
-     *
      * @var WriterInterface
      */
     protected $configWriter;
 
     /**
-     * Locale date
-     *
      * @var TimezoneInterface
      */
     protected $localeDate;
 
     /**
-     * Helper
-     *
      * @var Helper
      */
     protected $helper;

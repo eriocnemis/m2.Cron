@@ -1,6 +1,6 @@
 ## Contribution requirements
 
-1. Contributions must adhere to [Magento coding standards](http://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html).
+1. Contributions must adhere to [Magento coding standards](http://devdocs.magento.com/guides/v2.4/coding-standards/bk-coding-standards.html).
 2. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances of a pull request to be merged quickly and without additional clarification requests.
 3. Commits must be accompanied by meaningful commit messages.
 4. PRs which include bug fixing, must be accompanied with step-by-step description of how to reproduce the bug.
@@ -17,4 +17,4 @@ If you are a new GitHub user, we recommend that you create your own [free github
 ## Code of Conduct
 
 Please note that this project is released with a Contributor Code of Conduct. We expect you to agree to its terms when participating in this project.
-The full text is available in the repository (https://github.com/eriocnemis/m2.Cron/blob/master/CODE_OF_CONDUCT.md).
+The [full text is available](https://github.com/eriocnemis/m2.Cron/blob/master/.github/CODE_OF_CONDUCT.md) in the repository.

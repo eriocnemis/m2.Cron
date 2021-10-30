@@ -14,11 +14,9 @@ use Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFa
 class ConfigPlugin
 {
     /**
-     * Job collection factory
-     *
      * @var JobCollectionFactory
      */
-    protected $collectionFactory;
+    private $collectionFactory;
 
     /**
      * Initialize plugin
@@ -54,7 +52,7 @@ class ConfigPlugin
      * @param int[] $jobIds
      * @return mixed[]
      */
-    protected function prepareResult(array $result, array $jobIds)
+    private function prepareResult(array $result, array $jobIds)
     {
         foreach ($result as $group => $jobs) {
             foreach ($jobs as $name => $data) {
@@ -71,7 +69,7 @@ class ConfigPlugin
      *
      * @return int[]
      */
-    protected function getInactiveIds()
+    private function getInactiveIds()
     {
         $collection = $this->collectionFactory->create();
         $collection->addFieldToFilter('status', ['eq' => 0]);

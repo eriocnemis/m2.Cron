@@ -10,44 +10,36 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Ui\Component\MassAction\Filter;
 use Psr\Log\LoggerInterface;
-use Eriocnemis\Cron\Model\ResourceModel\Schedule\CollectionFactory as ScheduleCollectionFactory;
+use Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFactory;
 
 /**
- * Schedule abstract controller
+ * Job abstract controller
  */
-abstract class Schedule extends Action
+abstract class Job extends Action
 {
     /**
      * Authorization level of a basic admin session
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Magento_Backend::cron_schedule';
+    const ADMIN_RESOURCE = 'Magento_Backend::cron_job';
 
     /**
-     * Schedule collection factory
-     *
-     * @var ScheduleCollectionFactory
+     * @var JobCollectionFactory
      */
     protected $collectionFactory;
 
     /**
-     * Logger
-     *
      * @var LoggerInterface
      */
     protected $logger;
 
     /**
-     * File factory
-     *
      * @var FileFactory
      */
     protected $fileFactory;
 
     /**
-     * Mass action filter
-     *
      * @var Filter
      */
     protected $filter;
@@ -57,14 +49,14 @@ abstract class Schedule extends Action
      *
      * @param Context $context
      * @param LoggerInterface $logger
-     * @param ScheduleCollectionFactory $collectionFactory
+     * @param JobCollectionFactory $collectionFactory
      * @param FileFactory $fileFactory
      * @param Filter $filter
      */
     public function __construct(
         Context $context,
         LoggerInterface $logger,
-        ScheduleCollectionFactory $collectionFactory,
+        JobCollectionFactory $collectionFactory,
         FileFactory $fileFactory,
         Filter $filter
     ) {

@@ -14,15 +14,11 @@ use Magento\Cron\Model\ConfigInterface;
 class Group implements ArrayInterface
 {
     /**
-     * Config options
-     *
      * @var mixed[]
      */
     protected $options;
 
     /**
-     * Cron job config
-     *
      * @var ConfigInterface
      */
     protected $config;

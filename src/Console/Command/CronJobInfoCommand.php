@@ -17,8 +17,6 @@ use Eriocnemis\Cron\Model\ResourceModel\Job\CollectionFactory as JobCollectionFa
 class CronJobInfoCommand extends Command
 {
     /**
-     * Job collection factory
-     *
      * @var JobCollectionFactory
      */
     protected $collectionFactory;
